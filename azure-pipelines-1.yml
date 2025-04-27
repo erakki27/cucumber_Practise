@@ -20,14 +20,10 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-    
-- task: PublishTestResults@2
 
+- task: PublishCucumberReport@1
   inputs:
-
-    testResultsFormat: 'JUnit'
-
-    testResultsFiles: '**/TEST.xml'
-
-    searchFolder: '$(System.DefaultWorkingDirectory)\target\surefire-reports\old'
-    publishRunAttachments: true
+    jsonDir: '$(System.DefaultWorkingDirectory)'
+    outputPath: '$(System.DefaultWorkingDirectory)'
+    theme: 'bootstrap'
+    reportSuiteAsScenarios: true
