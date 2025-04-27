@@ -18,8 +18,10 @@ import io.cucumber.junit.Cucumber;
 import pages.MyntraOrder;
 
 
+
 @RunWith(Cucumber.class)
-public class SearchstepDefination extends BaseClass{
+public class SearchstepDefination {
+	private static final String MyntraUrl = "https://www.myntra.com/";
 	private WebDriver driver;
 	private MyntraOrder myntraOrder;
 	  
