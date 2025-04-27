@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.time.Duration;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +19,6 @@ import pages.MyntraOrder;
 public class BaseClass {
 	public String MyntraUrl = "http://www.myntra.com";
 	public static WebDriver driver;
-	public static Logger Logger;
 	protected MyntraOrder MO;
 	
 	
@@ -42,8 +39,6 @@ public class BaseClass {
 		 
 		    //original
 				//driver = new ChromeDriver();
-				Logger = Logger.getLogger("Demo");
-				PropertyConfigurator.configure("log4j.properties");
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
 	}
