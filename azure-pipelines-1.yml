@@ -27,3 +27,8 @@ steps:
     outputPath: '$(System.DefaultWorkingDirectory)'
     theme: 'bootstrap'
     reportSuiteAsScenarios: true
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
