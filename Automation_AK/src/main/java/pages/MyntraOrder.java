@@ -24,7 +24,7 @@ public class MyntraOrder {
     private By ColorSelectlocator = By.cssSelector("span[data-colorhex='black']");
     private By searchBrandlocator = By.xpath("//div[@class='vertical-filters-filters brand-container']//span[@class='myntraweb-sprite filter-search-iconSearch sprites-search']");
     private By enterBrandlocator = By.xpath("//input[@placeholder='Search for Brand']");
-    private By brandlocator = By.xpath("//div[@class='vertical-filters-filters brand-container']/ul/li/label[contains(text(),'KASSUALLY')]");
+    private By brandlocator = By.xpath("//div[@class='vertical-filters-filters brand-container']//li[1]//label[1]");
     private By productlocator = By.xpath("(//div[@class='product-productMetaInfo'])[3]");
     private By selectsizeloactor = By.xpath("//p[@class='size-buttons-unified-size' and contains(text(),'M')]");
     private By addtoBaglocator = By.cssSelector(".pdp-add-to-bag.pdp-button.pdp-flex.pdp-center");
@@ -46,11 +46,17 @@ public class MyntraOrder {
     	ColorSelect.click();
     }
     
-    public void SelectBrand() {
+    public void searchBoxforBrand() {
     	WebElement searchBrand = driver.findElement(searchBrandlocator);
-    	searchBrand.click();
+    	searchBrand.click();	
+    }
+    
+    public void searchBrand(String Brand) {
     	WebElement enterBrand = driver.findElement(enterBrandlocator);
-    	enterBrand.sendKeys("KASSUALLY");
+    	enterBrand.sendKeys(Brand);
+    }
+    
+    public void selectBrand() {
     	WebElement brand = driver.findElement(brandlocator);
     	brand.click();
     }

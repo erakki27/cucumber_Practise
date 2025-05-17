@@ -59,11 +59,15 @@ public class SearchstepDefination {
 		myntraOrder.selectDresses();
 	}
 
-	@Then("Select Color and Brand")
-	public void select_color_and_brand() throws InterruptedException {
+	@Then("Select Color and Brand {string}")
+	public void select_color_and_brand(String Brand) throws InterruptedException {
 	    // Write code here that turns the phrase above into concrete actions
 		myntraOrder.SelectColor();
-		myntraOrder.SelectBrand();
+		myntraOrder.searchBoxforBrand();
+		myntraOrder.searchBrand(Brand);
+		Thread.sleep(3000);;
+		myntraOrder.selectBrand();
+		Thread.sleep(3000);;
 	}
 
 	@Then("Select product and click on it for order")
